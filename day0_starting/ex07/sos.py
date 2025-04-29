@@ -2,6 +2,12 @@ import sys
 
 
 def translate(string: str):
+    """
+    Searches for a key value pair according to the provided characters in
+    a string.
+
+    Returns the string encrypted in Morse code.
+    """
     morse_dict = {'A': '.-',
                   'B': '-...',
                   'C': '-.-.',
