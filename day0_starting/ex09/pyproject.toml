@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ft_package_vbartos42"
+version = "42"
+description = "An utterly useless Python package"
+authors = [
+    { name = "vbartos42", email = "vbartos@student.42prague.com" }
+]
+license = { text = "MIT" }
+dependencies = []  # List of dependencies (if any)
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.6"  # Minimum Python version
