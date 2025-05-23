@@ -30,8 +30,7 @@ def slice_me(family: list, start: int, end: int) -> list:
         new_family = family[start:end]
         print(f"My new shape is : ({len(new_family)}, {len(new_family[0])})")
         return (new_family)
-    
-    
+
     except Exception as e:
         print(f"Error: {e}")
         return []

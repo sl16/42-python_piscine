@@ -1,8 +1,9 @@
 import numpy as np
 from PIL import Image
 
+
 def ft_load(path: str) -> np.ndarray:
-    
+
     """
     Loads an image, prints its format, and its pixels
     content in RGB format.
@@ -15,7 +16,7 @@ def ft_load(path: str) -> np.ndarray:
         assert img.format in ("JPG", "JPEG"), ("Provide JPG or JPEG only")
 
         print(f"The shape of the {img.format} image is: "
-                f"({img.height}, {img.width}, {len(img.mode)})")
+              f"({img.height}, {img.width}, {len(img.mode)})")
         return (np.array(img))
 
     except Exception as e:

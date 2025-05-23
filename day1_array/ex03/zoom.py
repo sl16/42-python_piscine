@@ -1,6 +1,11 @@
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 from PIL import Image
+from load_image import ft_load
+
+matplotlib.use('TkAgg')  # To enable plt.show() to open windows on WSL2
+
 
 def zoom(path: str, size: int) -> np.ndarray:
     """
@@ -21,11 +26,11 @@ def zoom(path: str, size: int) -> np.ndarray:
                 "The zoom area cannot be bigger than the image provided"
                 )
 
-            # Calculate the zoom area
+            # Calculate the zoom area (zoom in the middle)
             crop_area = (img.width // 2 - size // 2,
-                        img.height // 2 - size // 2,
-                        img.width // 2 + size // 2,
-                        img.height // 2 + size // 2)
+                         img.height // 2 - size // 2,
+                         img.width // 2 + size // 2,
+                         img.height // 2 + size // 2)
 
             # Crop and convert the image to grayscale
             zoomed_img = img.crop(crop_area)
@@ -37,16 +42,18 @@ def zoom(path: str, size: int) -> np.ndarray:
             plt.show()
 
             print(f"New shape after slicing: "
-                    f"({zoomed_img.height}, {zoomed_img.width}, "
-                    f"{len(zoomed_img.mode)})")
+                  f"({zoomed_img.height}, {zoomed_img.width}, "
+                  f"{len(zoomed_img.mode)})")
             return (np.array(zoomed_img))
 
     except Exception as e:
         print(f"Error: {e}")
         return []
 
+
 def main():
-    pass
+    print(ft_load("animal.jpeg"))
+    print(zoom("animal.jpeg", 400))
 
 
 if __name__ == "__main__":
